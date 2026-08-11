@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds Counts - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>Birds Counts 🐦</h2>
+        <div>
+            <span id="user-greeting" class="greeting"></span>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <!-- Post Upload Section -->
+        <div class="upload-card">
+            <h3>Share your Pet Bird</h3>
+            <input type="file" id="image-upload" accept="image/*">
+            <textarea id="post-caption" placeholder="Write something about your bird..."></textarea>
+            <button id="post-btn" class="post-btn">Upload Post</button>
+        </div>
+
+        <!-- Feed Section -->
+        <div id="feed-container" class="feed"></div>
+        
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
