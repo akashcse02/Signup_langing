@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Auth - Login & Signup</title>
+    <link rel="stylesheet" href="./Styles/styles.css">
+</head>
+<body>
+
+    <main class="app-container">
+        
+        <!-- ================= SIGNUP SECTION ================= -->
+        <div id="signup-section">
+            <header class="app-header">
+                <h1>Create Account</h1>
+                <p>Join our SaaS platform today. It's free!</p>
+            </header>
+
+            <form id="signup-form" class="form-card">
+                <div class="form-control">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="Enter your name" autocomplete="off">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" autocomplete="off">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Minimum 6 characters">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <button type="submit" id="signup-btn" disabled>Sign Up</button>
+            </form>
+            
+            <footer class="app-footer">
+                <p>Already have an account? <a href="#" id="go-to-login">Log in here</a></p>
+            </footer>
+        </div>
+
+        <!-- ================= LOGIN SECTION ================= -->
+        <div id="login-section" class="hidden">
+            <header class="app-header">
+                <h1>Welcome Back</h1>
+                <p>Log in to your SaaS account</p>
+            </header>
+
+            <form id="login-form" class="form-card">
+                <div class="form-control">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" autocomplete="off">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password">
+                    <small class="error-msg">Error message</small>
+                </div>
+
+                <button type="submit" id="login-btn">Log In</button>
+            </form>
+            
+            <footer class="app-footer">
+                <p>Don't have an account? <a href="#" id="go-to-signup">Sign up here</a></p>
+            </footer>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
