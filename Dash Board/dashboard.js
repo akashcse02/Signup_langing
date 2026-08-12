@@ -1,7 +1,7 @@
 // ১. চেক করা ইউজার লগইন করা আছে কিনা (Auth Guard)
 const currentUser = JSON.parse(localStorage.getItem('loggedInUser'));
 if (!currentUser) {
-    // লগইন না থাকলে সাইনআপ পেজে পাঠিয়ে দিবে
+    // লগইন না থাকলে সাইনআপ/লগইন পেজে পাঠিয়ে দিবে
     window.location.href = '../singup.html'; 
 }
 
@@ -11,7 +11,7 @@ document.getElementById('user-greeting').innerText = `Hello, ${currentUser.name}
 // লগআউট লজিক
 document.getElementById('logout-btn').addEventListener('click', () => {
     localStorage.removeItem('loggedInUser'); // ইউজার ডাটা মুছে ফেলা
-    window.location.href = '../singup.html';
+    window.location.href = '../singup.html'; // লগআউট হলে আবার লগইন পেজে যাবে
 });
 
 // ==========================================
@@ -39,7 +39,7 @@ postBtn.addEventListener('click', () => {
         return;
     }
 
-    // ছবিকে ব্রাউজারে দেখানোর জন্য Base64 এ কনভার্ট করা (যেহেতু রিয়েল সার্ভার নেই)
+    // ছবিকে ব্রাউজারে দেখানোর জন্য Base64 এ কনভার্ট করা
     const reader = new FileReader();
     reader.onload = function(e) {
         const newPost = {
@@ -47,8 +47,8 @@ postBtn.addEventListener('click', () => {
             author: currentUser.name,
             image: e.target.result,
             caption: caption,
-            likes: [], // যারা লাইক দিবে তাদের নাম থাকবে
-            comments: [] // { author: "", text: "" }
+            likes: [], 
+            comments: [] 
         };
         posts.unshift(newPost); // নতুন পোস্ট সবার উপরে থাকবে
         savePosts();
@@ -101,10 +101,10 @@ window.toggleLike = function(postId) {
     const post = posts.find(p => p.id === postId);
     const likeIndex = post.likes.indexOf(currentUser.name);
     
-    if (likeIndex === - -1) {
-        post.likes.push(currentUser.name); // লাইক দিল
+    if (likeIndex === -1) {
+        post.likes.push(currentUser.name); 
     } else {
-        post.likes.splice(likeIndex, 1); // লাইক রিমুভ করল
+        post.likes.splice(likeIndex, 1); 
     }
     
     savePosts();
